@@ -14,12 +14,12 @@ class SatangPhp extends Base
     public function createOrder($amount, $price, $pair='usd_thb', $side='buy', $type='limit'){
     
         $args = [
-            "amount" => $amount,
-            "nounce" => $amount,
-            "pair" => $amount,
-            "price" => $amount,
-            "side" => $amount,
-            "type" => $amount
+            "amount" => (string)$amount,
+            "nounce" => md5(time()),
+            "pair" => $pair,
+            "price" => (string)$price,
+            "side" => $side,
+            "type" => $type
         ];
         
         return $this->call('orders', $args);
