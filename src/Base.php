@@ -13,15 +13,23 @@ class Base
         if($args && is_array($args)){
             if(isset($args['satang_key'])){
                 $this->setKey($args['satang_key']);
-            }elseif(is_defined('SATANG_KEY')){
-                $this->setKey(SATANG_KEY);
             }
-            
+
             if(isset($args['satang_secret'])){
                 $this->setSecret($args['satang_secret']);
-            }elseif(is_defined('SATANG_SECRET')){
-                $this->setSecret(SATANG_SECRET);
             }
+        }
+        
+        if(!$this->satang_key && defined('SATANG_KEY')){
+            $this->setKey(SATANG_KEY);
+        }elseif(!$this->satang_key && is_callable('env')){
+            $this->setKey(env('SATANG_KEY'));
+        }
+        
+        if(!$this->satang_secret && defined('SATANG_SECRET')){
+            $this->setSecret(SATANG_SECRET);
+        }elseif(!$this->satang_secret && is_callable('env')){
+            $this->setSecret(env('SATANG_SECRET'));
         }
     }
     
