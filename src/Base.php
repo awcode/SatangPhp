@@ -57,7 +57,7 @@ class Base
     protected function call($path, $args, $mode='POST'){
         ksort($args);
         $signature = $this->signature($args);
-        $url = $this->host.$path.'/';
+        $url = $this->host.$path;
 
         $client = new Client([
             'headers' => [
@@ -69,7 +69,7 @@ class Base
         
         
         if($mode == 'POST'){
-            $response = $client->post($url, [
+            $response = $client->post($url.'/', [
                 \GuzzleHttp\RequestOptions::JSON => $args
             ]);
         }else{
@@ -78,11 +78,10 @@ class Base
                 if(strlen($str)){$str.='&';}else{$str.='?';}
                 $str.= $k.'='.$v;
             }
-            $response = $client->get($url.$str, [
-                \GuzzleHttp\RequestOptions::JSON => $args
-            ]);
+            
+            $response = $client->get($url.$str);
         }
         
-        return $response;
+        return $response->getBody();
     }
 }

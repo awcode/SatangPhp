@@ -25,4 +25,12 @@ class SatangPhp extends Base
         return $this->call('orders', $args);
     }
     
+    public function getCurrentRate($pair='btc_thb'){
+        $args = [
+            'symbol' => $pair
+        ];
+    
+        return $this->call('v3/depth', $args, 'GET');
+    }
+    
 }
