@@ -1,8 +1,8 @@
 <?php
 
-namespace Awcode\ThaiLaravel\Tests\Unit;
+namespace Awcode\SatangPhp\Tests\Unit;
 
-use Awcode\ThaiLaravel\ThaiLaravelServiceProvider;
+use Awcode\SatangPhp\\Laravel\SatangPhpServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -21,7 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function getPackageProviders($app)
     {
-        return [ThaiLaravelServiceProvider::class];
+        return [SatangPhpServiceProvider::class];
     }
 
 
