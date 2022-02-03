@@ -1,0 +1,38 @@
+{
+    "name": "awcode/satang-php" ,
+    "type": "library",
+    "description": "PHP SDK for Satang Corp API" ,
+    "keywords": [
+        "Satang",  "Satang Corp"
+    ],
+    "require": {
+        "php": "^7.1.0|^8.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0"
+    },
+    "autoload": {
+        "psr-4": { "Awcode\\SatangPhp\\" : "src/" }
+    },
+    "authors": [
+        {
+            "name": "awcode",
+            "homepage": "https://awcode.com"
+        },{
+            "name": "Mark Walker"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Awcode\\SatangPhp\\Laravel\\SatangPhpServiceProvider"
+            ],
+            "aliases": {
+                "ThaiLaravel": "Awcode\\SatangPhp\\Laravel\\SatangPhpFacade"
+            }
+        }
+    },
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.23"
+    }
+}
