@@ -47,9 +47,9 @@ class Base
     }
     
     protected function call($path, $args, $mode='POST'){
-        $args = ksort($args);
+        ksort($args);
         $signature = $this->signature($args);
-        $url = $this->host.$path;
+        $url = $this->host.$path.'/';
 
         $client = new Client([
             'headers' => [
