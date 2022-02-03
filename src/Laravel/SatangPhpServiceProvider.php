@@ -1,9 +1,9 @@
 <?php
 namespace Awcode\SatangPhp\Laravel;
 
+use Illuminate\Support\ServiceProvider;
 
-
-class SatangPhpServiceProvider
+class SatangPhpServiceProvider  extends ServiceProvider
 {
     
     
