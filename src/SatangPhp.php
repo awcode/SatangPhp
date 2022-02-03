@@ -7,7 +7,7 @@ class SatangPhp extends Base
 {
     
     public function __construct($args=[]){
-        parent::construct($args);
+        parent::__construct($args);
     }
     
     
