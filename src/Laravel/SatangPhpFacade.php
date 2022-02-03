@@ -3,7 +3,7 @@ namespace Awcode\SatangPhp\Laravel;
 
 
 
-class SatangPhpServiceProvider
+class SatangPhpFacade
 {
     
     
