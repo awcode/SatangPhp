@@ -43,7 +43,7 @@ class Base
             if(strlen($str)){$str.='&';}
             $str.= $k.'='.$v;
         }
-        return hash_hmac('sha512', $str, $this->satang_secret));
+        return hash_hmac('sha512', $str, $this->satang_secret);
     }
     
     protected function call($path, $args, $mode='POST'){
