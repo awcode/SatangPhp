@@ -13,13 +13,13 @@ class Base
         if($args && is_array($args)){
             if(isset($args['satang_key'])){
                 $this->setKey($args['satang_key']);
-            }elseif(is_defined('SATANG_KEY'){
+            }elseif(is_defined('SATANG_KEY')){
                 $this->setKey(SATANG_KEY);
             }
             
             if(isset($args['satang_secret'])){
                 $this->setSecret($args['satang_secret']);
-            }elseif(is_defined('SATANG_SECRET'){
+            }elseif(is_defined('SATANG_SECRET')){
                 $this->setSecret(SATANG_SECRET);
             }
         }
